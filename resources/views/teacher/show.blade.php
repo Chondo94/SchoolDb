@@ -12,30 +12,27 @@
     <div class="column"></div>
 
     <div class="column">
-      <input type="submit" value="{{ $student->fullname }}" class="button is-primary is-medium is-fullwidth is-rounded">
+      <input type="submit" value="{{ $teacher->fullname }}" class="button is-primary is-medium is-fullwidth is-rounded">
         <br>
         <table class="table is-striped is-narrow is-hoverable is-fullwidth">
           <!--<tr>
-            <th>Nombre</th><td>{{ $student->name }}</td>
+            <th>Nombre</th><td>{{ $teacher->name }}</td>
           </tr>-->
           <tr>
-            <th>Codigo</th><td>{{ $student->codigo }}</td>
+            <th>Nombre</th><td>{{ $teacher->fullname }}</td>
           </tr>
           <tr>
-            <th>Nombre</th><td>{{ $student->fullname }}</td>
-          </tr>
-          <tr>
-            <th>Fecha Nacimiento</th><td>{{ $student->birthdate }}</td>
+            <th>Fecha Nacimiento</th><td>{{ $teacher->birthdate }}</td>
           </tr>
 
         </table>
         <br>
-        <form action="{{ route('student.destroy', $student->id)}}" method="post">
+        <form action="{{ route('teacher.destroy', $teacher->id)}}" method="post">
           @csrf
           @method('DELETE')
           <div class="has-text-centered">
-          <a href="{{ route('student.index') }}" class="button is-link is-normal is-info is-rounded has-text-centered">Volver</a>
-          <a href="{{ route('student.edit', $student->id) }}" class="button is-success is-normal is-info is-rounded has-text-centered">Editar</a>
+          <a href="{{ route('teacher.index') }}" class="button is-link is-normal is-info is-rounded has-text-centered">Volver</a>
+          <a href="{{ route('teacher.edit', $teacher->id) }}" class="button is-success is-normal is-info is-rounded has-text-centered">Editar</a>
           <input type="submit" value="Eliminar" class="button is-danger is-normal is-info is-rounded has-text-centered">
         </div>
         </form>

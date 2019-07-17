@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Student;
+use App\Teacher;
 
-class StudentControlle extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StudentControlle extends Controller
      */
     public function index()
     {
-      $student = Student::all();
-      return view('student.index', compact('student'));
+      $teacher = Teacher::all();
+      return view('teacher.index', compact('teacher'));
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentControlle extends Controller
      */
     public function create()
     {
-        return view('student/create');
+        return view('teacher/create');
     }
 
     /**
@@ -36,8 +36,8 @@ class StudentControlle extends Controller
      */
     public function store(Request $request)
     {
-      $student = Student::create($request->all());
-  return view('student.show', compact('student'));
+      $student = Teacher::create($request->all());
+  return view('teacher.show', compact('teacher'));
     }
 
     /**
@@ -48,8 +48,8 @@ class StudentControlle extends Controller
      */
     public function show($id)
     {
-      $student = Student::findOrFail($id);
-      return view('student.show', compact('student'));
+      $teacher = Teacher::findOrFail($id);
+      return view('teacher.show', compact('teacher'));
     }
 
     /**
@@ -60,8 +60,8 @@ class StudentControlle extends Controller
      */
     public function edit($id)
     {
-      $student = Student::findOrFail($id);
-      return view('student.edit', compact('student'));
+      $teacher = Teacher::findOrFail($id);
+      return view('teacher.edit', compact('teacher'));
     }
 
     /**
@@ -73,9 +73,9 @@ class StudentControlle extends Controller
      */
     public function update(Request $request, $id)
     {
-      $student = Student::find($id);
-      $student -> update($request->all());
-      return view('student.show', compact('student'));
+      $teacher = Teacher::find($id);
+      $teacher -> update($request->all());
+      return view('teacher.show', compact('teacher'));
     }
 
     /**
@@ -86,8 +86,8 @@ class StudentControlle extends Controller
      */
     public function destroy($id)
     {
-      Student::find($id)->delete();
-      $student = Student::all();
-      return view('student.index', compact('student'));
+      Teacher::find($id)->delete();
+      $teacher = Teacher::all();
+      return view('teacher.index', compact('teacher'));
     }
 }

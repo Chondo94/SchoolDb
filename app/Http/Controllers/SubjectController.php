@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Subject;
 
 use Illuminate\Http\Request;
-use App\Student;
 
-class StudentControlle extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StudentControlle extends Controller
      */
     public function index()
     {
-      $student = Student::all();
-      return view('student.index', compact('student'));
+      $subject = Subject::all();
+      return view('subject.index', compact('subject'));
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentControlle extends Controller
      */
     public function create()
     {
-        return view('student/create');
+        return view('subject/create');
     }
 
     /**
@@ -36,8 +36,8 @@ class StudentControlle extends Controller
      */
     public function store(Request $request)
     {
-      $student = Student::create($request->all());
-  return view('student.show', compact('student'));
+      $subject = Subject::create($request->all());
+  return view('subject.show', compact('subject'));
     }
 
     /**
@@ -48,8 +48,8 @@ class StudentControlle extends Controller
      */
     public function show($id)
     {
-      $student = Student::findOrFail($id);
-      return view('student.show', compact('student'));
+      $subject = Subject::findOrFail($id);
+      return view('subject.show', compact('subject'));
     }
 
     /**
@@ -60,8 +60,8 @@ class StudentControlle extends Controller
      */
     public function edit($id)
     {
-      $student = Student::findOrFail($id);
-      return view('student.edit', compact('student'));
+      $subject = Subject::findOrFail($id);
+      return view('subject.edit', compact('subject'));
     }
 
     /**
@@ -73,9 +73,9 @@ class StudentControlle extends Controller
      */
     public function update(Request $request, $id)
     {
-      $student = Student::find($id);
-      $student -> update($request->all());
-      return view('student.show', compact('student'));
+      $subject = Subject::find($id);
+      $subject -> update($request->all());
+      return view('subject.show', compact('subject'));
     }
 
     /**
@@ -86,8 +86,8 @@ class StudentControlle extends Controller
      */
     public function destroy($id)
     {
-      Student::find($id)->delete();
-      $student = Student::all();
-      return view('student.index', compact('student'));
+      Subject::find($id)->delete();
+      $subject = Subject::all();
+      return view('subject.index', compact('subject'));
     }
 }
