@@ -19,6 +19,7 @@
           <th>Nombre</th>
           <th>Fecha de nacimiento</th>
           <th></th>
+          <th></th>
         </tr>
 
     @foreach($student as $student) <!--la primero "student" es la variable que se creo en el controlador index. -->
@@ -27,6 +28,7 @@
       <td>{{ $student->codigo }}</td>
       <td>{{ $student->fullname }}</td>
       <td>{{ $student->birthdate }}</td>
+      <td>{{ $student->is_active }}</td>
       <td><a href="{{ route('student.show', $student->id) }}" class="button is-dark">Detalle</a></td>
     </tr>
 

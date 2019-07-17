@@ -27,6 +27,9 @@
           <tr>
             <th>Fecha Nacimiento</th><td>{{ $student->birthdate }}</td>
           </tr>
+          <tr>
+            <th>Activo</th><td>{{ $student->is_active }}</td>
+          </tr>
 
         </table>
         <br>

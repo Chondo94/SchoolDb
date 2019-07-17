@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentsSubjectsYearsTable extends Migration
+class CreateStudentSubjectYearsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStudentsSubjectsYearsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students_subjects_years', function (Blueprint $table) {
+        Schema::create('student_subject_years', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('score');
             $table->bigInteger('student_id')->unsigned();
@@ -21,7 +21,7 @@ class CreateStudentsSubjectsYearsTable extends Migration
             $table->timestamps();
 
             $table->foreign('student_id')->references('id')->on('students');
-            $table->foreign('subject_year_id')->references('id')->on('subjects_years');
+            $table->foreign('subject_year_id')->references('id')->on('subject_years');
 
         });
     }
@@ -33,6 +33,6 @@ class CreateStudentsSubjectsYearsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students_subjects_years');
+        Schema::dropIfExists('student_subject_years');
     }
 }

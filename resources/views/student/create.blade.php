@@ -28,14 +28,21 @@
 
         <div class="field">
           <div class="control">
-            <input type="text" name="birthdate" class="input is-primary is-large has-text-centered is-rounded"  required placeholder="Fecha de Nacimiento"><br>
+            <input type="date" name="birthdate" class="input is-primary is-large has-text-centered is-rounded"  required placeholder="Fecha de Nacimiento"><br>
           </div>
         </div>
+
         <div class="field">
           <div class="control">
-            <input type="text" name="is_active" class="input is-primary is-large has-text-centered is-rounded"  required placeholder="Escriba 0 si esta Inactivo o 1 Activo"><br>
+            <div class="select is-large  is-primary is-rounded is-fullwidth">
+              <select name="is_active">
+                <option  class="is-rounded" value="1">Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+            </div>
           </div>
         </div>
+
         <input type="submit" value="guardar" class="button is-primary is-medium is-fullwidth is-rounded"  required>
     </form>
   </div>

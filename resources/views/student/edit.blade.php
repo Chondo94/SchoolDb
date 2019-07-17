@@ -31,7 +31,18 @@
 
         <div class="field">
           <div class="control">
-        <input type="text" name="birthdate" value="{{$student->birthdate}}" class="input is-primary is-large has-text-centered is-rounded" required placeholder=""><br>
+        <input type="date" name="birthdate" value="{{$student->birthdate}}" class="input is-primary is-large has-text-centered is-rounded" required placeholder=""><br>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <div class="select is-large  is-primary is-rounded is-fullwidth">
+              <select name="is_active">
+                <option  class="is-rounded" value="1">Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+            </div>
           </div>
         </div>
 
