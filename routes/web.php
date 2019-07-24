@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('student', 'StudentControlle');
 Route::resource('teacher', 'TeacherController');
 Route::resource('subject', 'SubjectController');
+Route::resource('period', 'SubjectYearController');
 
 Route::get('/insert', function () {
     return view('insert');

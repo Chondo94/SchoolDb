@@ -19,4 +19,7 @@ class SubjectYear extends Model
   public function subject(){
     return $this->belongsTo('App\Subject');
   }
+  public function enrollments(){
+    return $this->hasMany('App\Enrollment');
+  }
 }
