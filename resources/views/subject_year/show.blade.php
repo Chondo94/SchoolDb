@@ -11,8 +11,10 @@
       <div class="column"></div>
       <div class="column">
 
-    <h2 class="button is-primary is-medium is-fullwidth is-rounded ">{{ $subject_year->subject->name}} {{ $subject_year->teacher->fullname}}</h2>
-
+    <h2 class="button is-dark is-medium is-fullwidth ">Catedratico: {{ $subject_year->teacher->fullname}}</h2>
+    <br>
+    <h2 class="button is-dark is-medium is-fullwidth ">Materia: {{ $subject_year->subject->name}} </h2>
+    <br>
     <table class="table is-fullwidth">
       <td>Alumno</td>
       <td>Nota</td>
